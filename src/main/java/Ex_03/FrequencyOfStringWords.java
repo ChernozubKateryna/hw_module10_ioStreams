@@ -21,7 +21,7 @@ public class FrequencyOfStringWords {
             allStrings += string + " ";
         }
 
-        Map<String, Integer> map = new TreeMap<>();
+        Map<String, Integer> map = new LinkedHashMap<>();
         String[] stringArray = allStrings.split(" ");
 
         //filling the map with values
@@ -32,13 +32,6 @@ public class FrequencyOfStringWords {
                 map.put(stringArray[i], 1);
             }
         }
-        //hashLinkedList
-        //map.entrySet().stream().sorted((Comparator<? super Map.Entry<String, Integer>>) Map.Entry.comparingByValue().reversed());
-        //print the map
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + " - " + entry.getValue());
-        }
-        System.out.println();
 
         //sorting the map by the count of values
         //{day=1, sunny=2, is=3, the=4}
@@ -52,7 +45,17 @@ public class FrequencyOfStringWords {
         Map<String, Integer> resultMap = new LinkedHashMap<>();
         for (Map.Entry<String, Integer> entry : list) {
             resultMap.put(entry.getKey(), entry.getValue());
-            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+
+        // reverse the map
+        Set<String> setKeys = resultMap.keySet();
+        List<String> listKeys = new ArrayList<String>(setKeys);
+        ListIterator<String> iterator = listKeys.listIterator(listKeys.size());
+
+        while (iterator.hasPrevious()) {
+            String key = iterator.previous();
+
+            System.out.println(key + " " + map.get(key));
         }
 
         fileInputStream.close();
