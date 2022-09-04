@@ -7,7 +7,7 @@ import java.util.*;
 
 public class FrequencyOfStringWords {
     public static void main(String[] args) throws IOException {
-        countFrequency("D:/IT/GoIT_projects/module_10/words.txt");
+        countFrequency("words.txt");
     }
 
     public static void countFrequency(String fileName) throws IOException {

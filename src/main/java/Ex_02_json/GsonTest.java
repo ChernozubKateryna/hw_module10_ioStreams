@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class GsonTest {
     public static void main(String[] args) throws IOException {
-        File file = new File("D:/IT/GoIT_projects/module_10/userFile.txt");
+        File file = new File("userFile.txt");
         FileInputStream fileInputStream = new FileInputStream(file);
         Scanner scanner = new Scanner(fileInputStream);
 

@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class FileInputStreamTest {
     public static void main(String[] args) throws IOException {
-        getCorrectNumber("D:/IT/GoIT_projects/module_10/file.txt");
+        getCorrectNumber("file.txt");
 
     }
 
